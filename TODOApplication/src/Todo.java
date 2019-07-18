@@ -11,6 +11,7 @@ public class Todo {
     ApplicationInfo info = new ApplicationInfo();
     NewTaskAdder addtask = new NewTaskAdder();
     RemoveArg removetodos = new RemoveArg();
+    CheckTask check =new CheckTask();
 
     if (args.length == 0) {
       info.appinfo();
@@ -26,16 +27,30 @@ public class Todo {
         System.out.println("Unable to add: no task provided");
       }
     }
-    else if (args[0].equals("-r"));{
+    else if (args[0].equals("-r")){
       if (args.length == 2) {
         removetodos.removearg(args[1]);
       }
       else {
         System.out.println("Unable to remove: no index provided");
       }
+    }
+    else if (args[0].equals("-c")){
+      if (args.length == 2) {
+        check.checkTheTask(args[1]);
       }
+      else {
+        System.out.println("Unable to check: no index provided");
+      }
+    }
+
+    else {
+      System.out.println("Unsupported argument\n");
+      info.appinfo();
+    }
   }
 }
+
 
 
 

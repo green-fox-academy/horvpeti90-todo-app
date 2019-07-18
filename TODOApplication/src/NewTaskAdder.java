@@ -9,10 +9,10 @@ public class NewTaskAdder {
     Path filePath = Paths.get("tasks.txt");
     try {
       List<String> todos = Files.readAllLines(filePath);
-      todos.add(add);
+      todos.add("[ ] " +add);
       Files.write(filePath,todos);
 
-    } catch (IOException e) {
+    } catch (Exception e) {
     }
   }
 }
