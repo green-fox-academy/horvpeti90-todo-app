@@ -10,13 +10,15 @@ public class Todo {
     TaskListReader ListReader = new TaskListReader();
     ApplicationInfo info = new ApplicationInfo();
     NewTaskAdder addtask = new NewTaskAdder();
+    RemoveArg removetodos = new RemoveArg();
+
     if (args.length == 0) {
       info.appinfo();
     }
-    if (args[0].equals("-l")) {
+    else if (args[0].equals("-l")) {
       ListReader.taskList();
     }
-    if (args[0].equals("-a")) {
+    else if (args[0].equals("-a")) {
       if (args.length == 2){
         addtask.taskadder(args[1]);
       }
@@ -24,6 +26,14 @@ public class Todo {
         System.out.println("Unable to add: no task provided");
       }
     }
+    else if (args[0].equals("-r"));{
+      if (args.length == 2) {
+        removetodos.removearg(args[1]);
+      }
+      else {
+        System.out.println("Unable to remove: no index provided");
+      }
+      }
   }
 }
 

@@ -6,17 +6,13 @@ import java.util.List;
 
 public class NewTaskAdder {
   public static void taskadder(String add) {
-    Path filePath = Paths.get("D:\\green fox\\greenfox\\horvpeti90todoapp\\TODOApplication\\src\\tasks.txt");
+    Path filePath = Paths.get("tasks.txt");
     try {
       List<String> todos = Files.readAllLines(filePath);
       todos.add(add);
       Files.write(filePath,todos);
 
-//      if (add == null){
-//      }
-
     } catch (IOException e) {
-
     }
   }
 }

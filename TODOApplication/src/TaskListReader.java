@@ -7,7 +7,7 @@ import java.util.List;
 
 public class TaskListReader {
   public static void taskList() {
-    Path filePath = Paths.get("D:\\green fox\\greenfox\\horvpeti90todoapp\\TODOApplication\\src\\tasks.txt");
+    Path filePath = Paths.get("tasks.txt");
     try {
       List<String> todos = Files.readAllLines(filePath);
 
