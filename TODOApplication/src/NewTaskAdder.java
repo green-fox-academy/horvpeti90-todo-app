@@ -10,7 +10,10 @@ public class NewTaskAdder {
     try {
       List<String> todos = Files.readAllLines(filePath);
       todos.add(add);
+      Files.write(filePath,todos);
 
+//      if (add == null){
+//      }
 
     } catch (IOException e) {
 

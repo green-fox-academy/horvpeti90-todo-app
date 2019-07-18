@@ -9,7 +9,7 @@ public class Todo {
   public static void main(String[] args) {
     TaskListReader ListReader = new TaskListReader();
     ApplicationInfo info = new ApplicationInfo();
-    NewTaskAdder addtask = new NewTaskAdder()
+    NewTaskAdder addtask = new NewTaskAdder();
     if (args.length == 0) {
       info.appinfo();
     }
@@ -17,9 +17,12 @@ public class Todo {
       ListReader.taskList();
     }
     if (args[0].equals("-a")) {
-      addtask.taskadder(args[1]);
-
-
+      if (args.length == 2){
+        addtask.taskadder(args[1]);
+      }
+      else {
+        System.out.println("Unable to add: no task provided");
+      }
     }
   }
 }
